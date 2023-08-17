@@ -1,0 +1,277 @@
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #039650;
+    padding: 10px 67.5px;
+    box-sizing: border-box;
+    z-index: 100;
+    transition: top 0.3s;
+
+    @media only screen and (max-width: 1024px) {
+        padding: 10px 35px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        padding: 10px 20px;
+    }
+
+    &Search {
+        padding: 0px 15px;
+        display: flex;
+        align-items: center;
+
+        &Note {
+            margin-bottom: 0px;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 5px;
+            color: white;
+
+            @media only screen and (max-width: 1024px) {
+                display: none;
+            }
+        }
+
+        &Wrapper {
+            flex: 1;
+        }
+
+        &Button {
+            color: white;
+            padding: 0px 15px;
+            background-color: #eb7a1f;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            content: pointer;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        & input {
+            height: 50px;
+            width: 92%;
+            padding: 0px 15px;
+            border: none;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            outline: none;
+        }
+    }
+
+    &Wrapper {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    &Logo {
+        padding: 0 25px;
+
+        @media only screen and (max-width: 1024px) {
+            display: none;
+        }
+
+        & img {
+            width: 130px;
+            height: 40px;
+            margin-top: 10px;
+        }
+    }
+
+    &Icon {
+        padding: 0 15px;
+        color: white;
+        cursor: pointer;
+        position: relative;
+
+        &Triangle {
+            position: absolute;
+            bottom: -149%;
+            border-right: 9px solid transparent;
+            border-left: 9px solid transparent;
+            border-bottom: 9px solid white;
+            width: 0px;
+            height: 0px;
+        }
+    }
+
+    &Category {
+        max-height: 780px;
+        overflow: auto;
+
+        &BlurGlass {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: black;
+            opacity: 0.2;
+            z-index: 1000;
+            display: none;
+
+            @media only screen and (max-width: 1023px) {
+                display: block;
+            }
+        }
+
+        &Mobile {
+            max-height: 100vh;
+            overflow-y: auto;
+            display: none;
+            position: absolute;
+            background-color: white;
+            z-index: 1001;
+            width: 80%;
+            left: 0;
+            height: 100vh;
+            top: 0%;
+            animation: mobileNavbarSlideIn 0.2s forwards;
+
+            & ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                margin-top: 20px;
+
+                & li {
+                    padding: 12px 0px 12px 30px;
+
+                    & a {
+                        text-decoration: none;
+                        color: black;
+                        font-weight: 100;
+                    }
+                }
+            }
+
+            &Header {
+                display: block;
+                background-color: rgb(241, 241, 241);
+                cursor: pointer;
+                color: rgb(51, 62, 72);
+                overflow: hidden;
+                font-weight: 500;
+                padding: 0.857em 1.387em;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+                & span {
+                    margin-left: 5px;
+                }
+            }
+
+            @media only screen and (max-width: 1023px) {
+                display: block;
+            }
+
+            @keyframes mobileNavbarSlideIn {
+                from {
+                    transform: translateX(-100%);
+                }
+
+                to {
+                    transform: translateX(0%);
+                }
+            }
+        }
+
+        position: absolute;
+        z-index: 100;
+        top: 101%;
+        background-color: white;
+
+        &Lv2 {
+            background-color: white;
+            z-index: 101;
+            position: absolute;
+            left: 100%;
+            top: 0%;
+            min-height: 100%;
+            border-left: none !important;
+            min-width: 330px;
+            padding-top: 10px !important;
+            animation: navbarLv2Appear 0.3s forwards;
+            display: none;
+
+            & li {
+                &:hover {
+                    & ul {
+                        display: block;
+                    }
+
+                    & a {
+                        color: white !important;
+                    }
+
+                    background-color: #46B07D;
+                }
+
+                & a {
+                    font-size: 14px !important;
+                    border-bottom: none !important;
+                    color: black !important;
+                }
+            }
+
+            @keyframes navbarLv2Appear {
+                0% {
+                    opacity: 0;
+                }
+
+                50% {
+                    opacity: 1;
+                }
+
+            }
+        }
+
+        & ul {
+            max-width: 320px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            border: 2px solid #039650;
+            border-top: none;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+
+            & li {
+                padding: 0px 18px;
+
+                &:hover {
+                    & ul {
+                        display: block;
+                    }
+
+                    & a {
+                        color: white;
+                    }
+
+                    background-color: #46B07D;
+                }
+
+                & a {
+                    color: #43454B;
+                    font-size: 16px;
+                    text-decoration: none;
+                    color: black;
+                    padding: 9px 9px;
+                    display: block;
+                    min-width: 200px;
+                }
+
+                &:not(:last-child) a {
+                    border-bottom: 0.5px solid #c5c5c5;
+                }
+            }
+        }
+    }
+
+    &ArrowRight {
+        margin-left: 20px;
+    }
+}
